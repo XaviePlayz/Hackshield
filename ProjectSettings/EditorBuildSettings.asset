@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Xavier/Test.unity
+    guid: 71ebf0028b742e848b0f4b4a88e4ed54
+  - enabled: 1
+    path: Assets/Scenes/Question.unity
+    guid: 8e3b9d71cc9964f47b4511f58d94e6fe
   m_configObjects: {}
