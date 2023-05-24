@@ -6,6 +6,7 @@ public class CharacterControlScript : MonoBehaviour
     public Camera cam;
     public NavMeshAgent player;
     public GameObject targetDestination;
+    public SceneManagerScript sceneManager;
 
     void Update()
     {
@@ -28,6 +29,14 @@ public class CharacterControlScript : MonoBehaviour
         if (player.velocity == Vector3.zero)
         {
             //Player Idle Animation
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Interactable_Computer")
+        {
+            sceneManager.ToggleAdditiveScene();
         }
     }
 }
