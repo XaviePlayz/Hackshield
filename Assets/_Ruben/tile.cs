@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class tile : MonoBehaviour
 {
-    public Tile[] URDL = new Tile[4];
+    public tile[] URDL = new tile[4];
     public bool searched = false;
     public LayerMask tileLayer;
-    public Tile searchedFrom;
+    public tile searchedFrom;
     private Vector3[] dir = { Vector3.forward, Vector3.right, Vector3.back, Vector3.left };
 
     private void GetURDL()
@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 10.5f, tileLayer))
             {
-                Tile tile = hit.collider.GetComponent<Tile>();
+                tile tile = hit.collider.GetComponent<tile>();
                 URDL[i] = tile;
             }
         }
