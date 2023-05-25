@@ -11,43 +11,48 @@ public class TileBasedMovement : MonoBehaviour
     private List<Vector3> path;
     private int currentPathIndex;
     private bool isMoving = false;
-    public Tile[] allTiles;
-    public Tile currentTile;
+    public tile[] allTiles;
+    public tile currentTile;
 
     private void Start()
     {
-        allTiles = GameObject.FindObjectsOfType<Tile>();
+        allTiles = GameObject.FindObjectsOfType<tile>();
     }
-
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+         if (Input.GetMouseButtonDown(0))
+         {
+             RaycastHit hit;
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, tileLayer))
-            {
-                Vector3 targetPosition = hit.collider.transform.position;
-                targetPosition.x = Mathf.Round(targetPosition.x);
-                targetPosition.z = Mathf.Round(targetPosition.z);
+             if (Physics.Raycast(ray, out hit, Mathf.Infinity, tileLayer))
+             {
+                 // Calculate the target position based on the clicked tile
+                 Vector3 targetPosition = hit.collider.transform.position;
 
-                if (!isMoving)
-                {
-                    path = FindPath(characterTransform.position, targetPosition);
+                 // Ensure the target position is aligned to the grid (optional)
+                 targetPosition.x = Mathf.Round(targetPosition.x);
+                 targetPosition.z = Mathf.Round(targetPosition.z);
 
-                    if (path != null && path.Count > 0)
-                    {
-                        currentPathIndex = 0;
-                        isMoving = true;
-                        StartCoroutine(MoveAlongPath());
-                    }
-                }
-            }
-        }
+                 if (!isMoving)
+                 {
+                   
+                     // Find a path to the target position using A* algorithm
+                     path = FindPath(characterTransform.position, targetPosition);
+
+                     if (path != null && path.Count > 0)
+                     {
+                         Debug.Log("gevonden");
+                         currentPathIndex = 0;
+                         isMoving = true;
+                         StartCoroutine(MoveAlongPath());
+                     }
+                 }
+             }
+         }
     }
 
-    private IEnumerator MoveAlongPath()
+    private System.Collections.IEnumerator MoveAlongPath()
     {
         while (currentPathIndex < path.Count)
         {
@@ -59,99 +64,67 @@ public class TileBasedMovement : MonoBehaviour
                 yield return null;
             }
 
+            // Update the character position to the target position precisely
             characterTransform.position = targetPosition;
+
             currentPathIndex++;
         }
 
+        // Movement complete
         isMoving = false;
     }
 
+
     private List<Vector3> FindPath(Vector3 startPosition, Vector3 targetPosition)
     {
-        List<List<Tile>> paths = new List<List<Tile>>();
-        List<Tile> initialPath = new List<Tile>();
-        initialPath.Add(currentTile);
-        paths.Add(initialPath);
+        // stores all the paths that are possible 
+        List<List<tile>> paths = new List<List<tile>>();
+        /*tile currT = currenttile;*/
         bool pathComplete = false;
+        int index = 0;
 
-        for (int x = 0; x < 1000; x++)
+        /*while (!pathComplete)*/
+
+        for (int x = 0; x < 10000; x++)
         {
-            if (!pathComplete)
+            //check all paths
+            for (int i = 0; i < paths.ToArray().Length; i++)
             {
-                for (int i = 0; i < paths.Count; i++)
-                {
-                    List<Tile> path = paths[i];
-                    Tile lastSearchedTileInActivePath = path[path.Count - 1];
-
-                    for (int j = 0; j < lastSearchedTileInActivePath.URDL.Length; j++)
-                    {
-                        if (lastSearchedTileInActivePath.URDL[j] == null)
-                        {
-                            continue;
-                        }
-
-                        List<Tile> newPath = new List<Tile>(path);
-                        newPath.Add(lastSearchedTileInActivePath.URDL[j]);
-
-                        if (lastSearchedTileInActivePath.URDL[j].transform.position == targetPosition)
-                        {
-                            pathComplete = true;
-                            return ConvertTilesToPositions(newPath);
-                        }
-                        else
-                        {
-                            paths.Add(newPath);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                Debug.Log("Done");
-            }
-        }
-        /*while (!pathComplete)
-        {
-            for (int i = 0; i < paths.Count; i++)
-            {
-                List<Tile> path = paths[i];
-                Tile lastSearchedTileInActivePath = path[path.Count - 1];
-
+                //get active path
+                List<tile> path = paths[i];
+                tile lastSearchedTileInActivePath = path[path.Count];
+                //increment active path 1
                 for (int j = 0; j < lastSearchedTileInActivePath.URDL.Length; j++)
                 {
-                    if (lastSearchedTileInActivePath.URDL[j] == null)
-                    {
-                        continue;
-                    }
+                    if (lastSearchedTileInActivePath.URDL[j] == null) { continue; }
+                    // If not null the execute code
 
-                    List<Tile> newPath = new List<Tile>(path);
-                    newPath.Add(lastSearchedTileInActivePath.URDL[j]);
+                    StartCoroutine(walkPath(path));
 
-                    if (lastSearchedTileInActivePath.URDL[j].transform.position == targetPosition)
-                    {
-                        pathComplete = true;
-                        return ConvertTilesToPositions(newPath);
-                    }
-                    else
-                    {
-                        paths.Add(newPath);
-                    }
                 }
             }
-        }*/
 
-        return null;
-    }
-
-    private List<Vector3> ConvertTilesToPositions(List<Tile> tiles)
-    {
-        List<Vector3> positions = new List<Vector3>();
-
-        foreach (Tile tile in tiles)
-        {
-            positions.Add(tile.transform.position);
+            //increment when path is not complete but needs another round
+            index++;
         }
 
-        return positions;
+
+        return path;
+    }
+
+    private IEnumerator walkPath(List<tile> endPath)
+    {
+        int currentWaypoint = 0;
+        while (currentWaypoint != endPath.Count)
+        {
+            characterTransform.position = Vector3.MoveTowards(characterTransform.position, endPath[currentWaypoint + 1].transform.position, moveSpeed * Time.deltaTime);
+            if (Vector3.Distance(characterTransform.position, endPath[currentWaypoint + 1].transform.position) < 0.2f)
+            {
+                currentWaypoint++;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        Debug.Log("Gehaald");
+        yield return null;
     }
 }
