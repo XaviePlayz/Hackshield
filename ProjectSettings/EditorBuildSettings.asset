@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Xavier/Test.unity
+    path: Assets/Scenes/Xavier.unity
     guid: 71ebf0028b742e848b0f4b4a88e4ed54
   - enabled: 1
     path: Assets/Scenes/Question.unity
