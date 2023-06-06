@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ba3bc76f638a4b4eb01168ed15ad03d, type: 3}
-  m_Name: Geert-Peter
+  m_Name: Gerda
   m_EditorClassIdentifier: 
-  age: 14
-  memberSinceDate: 3 maanden
-  predefinedMessages: Yo! Mijn naam is Geert-Peter. Wil je vrienden worden?
-  friend1: Puk
-  friend2: Jakob
-  nameCharacter: Geert-Peter
-  characterImage: {fileID: 21300000, guid: 08c91a7677e66844281a99aaf6ea36f1, type: 3}
+  age: 2
+  memberSinceDate: Gister
+  predefinedMessages: HALLOOO
+  friend1: Peter
+  friend2: Klaas
+  nameCharacter: Gerda
+  characterImage: {fileID: 21300000, guid: 372e7b39fc8f34549ac25d8757965a2c, type: 3}
   accept: 0
-  encounterNumber: 1
+  encounterNumber: 3
+  encounterList: []

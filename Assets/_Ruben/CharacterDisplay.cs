@@ -11,6 +11,8 @@ public class CharacterDisplay : MonoBehaviour
     public TMP_Text memberSinceText;
     public TMP_Text friendsText;
     public TMP_Text messagePhone;
+    public TMP_Text friendone;
+    public TMP_Text friendtwo;
 
     private void Start()
     {
@@ -30,10 +32,10 @@ public class CharacterDisplay : MonoBehaviour
         nameText.text = characterData.nameCharacter;
         ageText.text = "Leeftijd: " + characterData.age.ToString();
         memberSinceText.text = "Lid sinds: " + characterData.memberSinceDate;
+        friendone.text = characterData.friend1.ToString();
+        friendtwo.text = characterData.friend2.ToString();
 
-        // Combine friends into a single string
-        string friends = string.Join(", ", characterData.friends);
-        friendsText.text = "Friends: " + friends;
+       
 
         messagePhone.text = characterData.predefinedMessages.ToString();
     }
