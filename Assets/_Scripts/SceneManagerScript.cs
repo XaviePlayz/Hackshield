@@ -7,8 +7,7 @@ using System;
 public class SceneManagerScript : MonoBehaviour
 {
     private bool isAdditiveSceneLoaded = false;
-    public CharacterData charD;
-    public CharacterDisplay charShow;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -19,20 +18,22 @@ public class SceneManagerScript : MonoBehaviour
 
     public void ToggleAdditiveScene()
     {
+
         if (isAdditiveSceneLoaded)
         {
+           
             // Unload the additive scene
             SceneManager.UnloadSceneAsync("Question");
-
+            isAdditiveSceneLoaded = false;
         }
         else
         {
             // Load the additive scene additively
             SceneManager.LoadSceneAsync("Question", LoadSceneMode.Additive);
-            charD.LoadEncountersInOrder();
+            isAdditiveSceneLoaded = true;
         }
 
-        isAdditiveSceneLoaded = !isAdditiveSceneLoaded;
+        
     }
 
 }

@@ -13,6 +13,8 @@ public class CharacterDisplay : MonoBehaviour
     public TMP_Text messagePhone;
     public TMP_Text friendone;
     public TMP_Text friendtwo;
+    public Image extraPic;
+    public TMP_Text extraName;
 
     private void Start()
     {
@@ -27,9 +29,11 @@ public class CharacterDisplay : MonoBehaviour
     {
         // Load the character image (assuming it's stored in the CharacterData scriptable object)
         characterImage.sprite = characterData.characterImage;
+        extraPic.sprite = characterData.extraImage;
 
         // Load the text data from the CharacterData scriptable object
         nameText.text = characterData.nameCharacter;
+        extraName.text = characterData.extraNaam;
         ageText.text = "Leeftijd: " + characterData.age.ToString();
         memberSinceText.text = "Lid sinds: " + characterData.memberSinceDate;
         friendone.text = characterData.friend1.ToString();
