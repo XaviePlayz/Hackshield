@@ -4,11 +4,16 @@ using UnityEngine.AI;
 public class CharacterControlScript : MonoBehaviour
 {
     public Camera cam;
-    public NavMeshAgent player;
+    [SerializeField] private NavMeshAgent player;
     public GameObject targetDestination;
     public SceneManagerScript sceneManager;
+    [SerializeField] private Animator anim;
 
- 
+    private void Start()
+    {
+        player = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
+    }
 
     void Update()
     {
@@ -43,10 +48,13 @@ public class CharacterControlScript : MonoBehaviour
         if (player.velocity != Vector3.zero)
         {
             //Player Moves Animation
+            anim.SetTrigger("Walk");
         }
         if (player.velocity == Vector3.zero)
         {
             //Player Idle Animation
+            anim.SetTrigger("Idle");
+
         }
     }
 
