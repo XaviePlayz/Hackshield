@@ -15,19 +15,9 @@ public class CharacterData : ScriptableObject
     public Sprite characterImage;
     public bool accept;
     public int encounterNumber;
-    public List<CharacterData> encounterList = new List<CharacterData>();
-    public void LoadEncountersInOrder()
-    {
-        // Load encounters in the desired order based on encounterNumber
-        CharacterData[] loadedEncounters = Resources.LoadAll<CharacterData>("Encounters");
-        Array.Sort(loadedEncounters, (a, b) => a.encounterNumber.CompareTo(b.encounterNumber));
+    public Sprite extraImage;
+    public string extraNaam;
+    
 
-        // Merge the loaded encounters with the existing encounterList
-        List<CharacterData> mergedList = new List<CharacterData>(encounterList); // Preserve existing encounters
-        mergedList.AddRange(loadedEncounters); // Add loaded encounters
-
-        // Assign the merged list back to the encounterList field
-        encounterList = mergedList;
-    }
 
 }

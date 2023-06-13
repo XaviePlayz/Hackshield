@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 873155984}
   - component: {fileID: 873155983}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: extrapic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 1172551257}
   - component: {fileID: 1172551256}
   m_Layer: 5
-  m_Name: Naam (1)
+  m_Name: extraname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1684,6 +1684,51 @@ RectTransform:
   m_AnchoredPosition: {x: -540.7288, y: -11.6765}
   m_SizeDelta: {x: 285.8268, y: 110.3486}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1821846044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821846046}
+  - component: {fileID: 1821846045}
+  m_Layer: 0
+  m_Name: characterloaderManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1821846045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821846044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4cff50044659a49b13373d93a6747b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentChar: {fileID: 1835459178}
+--- !u!4 &1821846046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821846044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835459173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1742,6 @@ GameObject:
   - component: {fileID: 1835459175}
   - component: {fileID: 1835459174}
   - component: {fileID: 1835459178}
-  - component: {fileID: 1835459179}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1803,7 +1847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44daadc3c933a2a4aa8545ef5aa4af90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 5df2f65f3e66e964dbcdbdc34f9654b6, type: 2}
+  characterData: {fileID: 0}
   characterImage: {fileID: 1306044396}
   nameText: {fileID: 445565841}
   ageText: {fileID: 2031998594}
@@ -1812,27 +1856,8 @@ MonoBehaviour:
   messagePhone: {fileID: 1752753604}
   friendone: {fileID: 1861693145}
   friendtwo: {fileID: 2139834652}
---- !u!114 &1835459179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835459173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44daadc3c933a2a4aa8545ef5aa4af90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 5df2f65f3e66e964dbcdbdc34f9654b6, type: 2}
-  characterImage: {fileID: 873155983}
-  nameText: {fileID: 1172551256}
-  ageText: {fileID: 2031998594}
-  memberSinceText: {fileID: 1284292235}
-  friendsText: {fileID: 1861693145}
-  messagePhone: {fileID: 1752753604}
-  friendone: {fileID: 1861693145}
-  friendtwo: {fileID: 2139834652}
+  extraPic: {fileID: 873155983}
+  extraName: {fileID: 1172551256}
 --- !u!1 &1861693144
 GameObject:
   m_ObjectHideFlags: 0
