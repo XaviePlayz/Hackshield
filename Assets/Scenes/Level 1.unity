@@ -4945,8 +4945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f1fd24a3a090c4eb9bfac1f92d8aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charD: {fileID: 0}
-  charShow: {fileID: 0}
+  player: {fileID: 1773563362}
 --- !u!4 &1604801995
 Transform:
   m_ObjectHideFlags: 0
@@ -5028,7 +5027,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1660373149
 PrefabInstance:
@@ -5759,6 +5758,7 @@ MonoBehaviour:
   targetDestination: {fileID: 849040908}
   sceneManager: {fileID: 1604801994}
   anim: {fileID: 0}
+  inComputer: 0
 --- !u!195 &1773563363
 NavMeshAgent:
   m_ObjectHideFlags: 0

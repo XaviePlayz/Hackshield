@@ -9,6 +9,8 @@ public class CharacterControlScript : MonoBehaviour
     public SceneManagerScript sceneManager;
     [SerializeField] private Animator anim;
 
+    public bool inComputer;
+
     private void Start()
     {
         player = GetComponent<NavMeshAgent>();
@@ -37,7 +39,7 @@ public class CharacterControlScript : MonoBehaviour
 
                 Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-                if (Physics.Raycast(ray, out hitPoint, 100, layerMask))
+                if (Physics.Raycast(ray, out hitPoint, 100, layerMask) && !inComputer)
                 {
                     targetDestination.transform.position = hitPoint.point;
                     player.SetDestination(hitPoint.point);
