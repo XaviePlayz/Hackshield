@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class cManager : MonoBehaviour
 {
     public CharacterDisplay currentChar;
-    private int currentIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +31,7 @@ public class cManager : MonoBehaviour
         // Merge the loaded encounters with the existing encounterList
         List<CharacterData> mergedList = new List<CharacterData>(loadedEncounters); // Preserve existing encounters
         mergedList.AddRange(loadedEncounters); // Add loaded encounters
-        currentChar.characterData = mergedList[SceneManagerScript.currentCount];
+        currentChar.characterData = mergedList[stateHolder.currentEncounter];
         
         Debug.Log(mergedList[0]); 
 

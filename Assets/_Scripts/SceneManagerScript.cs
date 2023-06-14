@@ -7,7 +7,7 @@ using System;
 public class SceneManagerScript : MonoBehaviour
 {
     private bool isAdditiveSceneLoaded = false;
-
+    public static int currentCount = 0;
     public CharacterControlScript player;
 
     void Update()
@@ -27,7 +27,13 @@ public class SceneManagerScript : MonoBehaviour
             // Unload the additive scene
             SceneManager.UnloadSceneAsync("Question");
             isAdditiveSceneLoaded = false;
-        }
+            if (stateHolder.maxCharacters > stateHolder.currentEncounter + 1)
+            {
+                stateHolder.currentEncounter ++;
+            }
+            else 
+                stateHolder.currentEncounter = 0;
+            }
         else
         {
             player.inComputer = true;
