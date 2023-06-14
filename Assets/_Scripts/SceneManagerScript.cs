@@ -7,6 +7,7 @@ using System;
 public class SceneManagerScript : MonoBehaviour
 {
     private bool isAdditiveSceneLoaded = false;
+    public static int currentCount = 0; 
 
     void Update()
     {
