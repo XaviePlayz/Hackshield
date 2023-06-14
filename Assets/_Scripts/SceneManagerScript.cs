@@ -7,7 +7,8 @@ using System;
 public class SceneManagerScript : MonoBehaviour
 {
     private bool isAdditiveSceneLoaded = false;
-    public static int currentCount = 0; 
+
+    public CharacterControlScript player;
 
     void Update()
     {
@@ -22,19 +23,17 @@ public class SceneManagerScript : MonoBehaviour
 
         if (isAdditiveSceneLoaded)
         {
-           
+            player.inComputer = false;
             // Unload the additive scene
             SceneManager.UnloadSceneAsync("Question");
             isAdditiveSceneLoaded = false;
         }
         else
         {
+            player.inComputer = true;
             // Load the additive scene additively
             SceneManager.LoadSceneAsync("Question", LoadSceneMode.Additive);
             isAdditiveSceneLoaded = true;
-        }
-
-        
+        }       
     }
-
 }
