@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Xavier.unity
-    guid: 71ebf0028b742e848b0f4b4a88e4ed54
+    path: Assets/Scenes/Starting Chamber.unity
+    guid: 9d5c5d725d9950641987473d5ac91819
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: dc4fc46ea70f8c14c8e6e753d71a7427
   - enabled: 1
     path: Assets/Scenes/Question.unity
     guid: 8e3b9d71cc9964f47b4511f58d94e6fe

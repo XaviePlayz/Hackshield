@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CharacterControlScript : MonoBehaviour
 {
@@ -66,5 +67,12 @@ public class CharacterControlScript : MonoBehaviour
         {
             sceneManager.ToggleAdditiveScene();
         }
+
+        if (other.gameObject.tag == "Portal")
+        {
+            SceneManager.LoadScene(1);
+        }
     }
+
+
 }

@@ -36,7 +36,7 @@ public class StartingDialogue : MonoBehaviour
             }
             else
             {
-                // Dialogue is finished, do something (e.g., start the game)
+                // Dialogue is finished, giving Player Controls
                 Player.SetActive(true);
             }
         }

@@ -10,6 +10,10 @@ public class SceneManagerScript : MonoBehaviour
     public static int currentCount = 0;
     public CharacterControlScript player;
 
+    private void Start()
+    {
+        player.enabled = false;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -41,5 +45,10 @@ public class SceneManagerScript : MonoBehaviour
             SceneManager.LoadSceneAsync("Question", LoadSceneMode.Additive);
             isAdditiveSceneLoaded = true;
         }       
+    }
+
+    public void StartGame()
+    {
+        player.enabled = true;
     }
 }
