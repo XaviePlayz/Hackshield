@@ -6,11 +6,11 @@ public class StartingDialogue : MonoBehaviour
 {
     public GameObject[] dialogueImages;
     private int currentImageIndex = 0;
-    public GameObject Player;
+    public CharacterControlScript player;
 
     private void Start()
     {
-        Player.SetActive(false);
+        player.enabled = false;
         // Hide all dialogue images except the first one
         for (int i = 1; i < dialogueImages.Length; i++)
         {
@@ -37,7 +37,7 @@ public class StartingDialogue : MonoBehaviour
             else
             {
                 // Dialogue is finished, giving Player Controls
-                Player.SetActive(true);
+                player.enabled = true;
             }
         }
     }

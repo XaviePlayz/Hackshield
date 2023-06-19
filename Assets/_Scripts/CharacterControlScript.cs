@@ -63,12 +63,12 @@ public class CharacterControlScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Interactable_Computer")
+        if (other.gameObject.CompareTag("Interactable_Computer"))
         {
             sceneManager.ToggleAdditiveScene();
         }
 
-        if (other.gameObject.tag == "Portal")
+        if (other.gameObject.CompareTag("Portal"))
         {
             SceneManager.LoadScene(1);
         }
