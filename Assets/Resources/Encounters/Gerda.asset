@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba3bc76f638a4b4eb01168ed15ad03d, type: 3}
   m_Name: Gerda
   m_EditorClassIdentifier: 
-  age: 2
+  age: 12
   memberSinceDate: Gister
-  predefinedMessages: HALLOOO
+  predefinedMessages: Hallo, wil je samen met mij een lekker ijsje halen op deze
+    hete zomerdag?
   friend1: Peter
   friend2: Klaas
   nameCharacter: Gerda
@@ -23,3 +24,5 @@ MonoBehaviour:
   encounterNumber: 1
   extraImage: {fileID: 21300000, guid: fd26bece36408a64eb30294fb1702b93, type: 3}
   extraNaam: Gerda
+  jaZin: Ja graag! Dat lijkt mij heerlijk.
+  neeZin: Nee dankjewel, ik ga niet met vreemden om.

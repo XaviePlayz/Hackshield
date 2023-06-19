@@ -17,6 +17,8 @@ public class CharacterData : ScriptableObject
     public int encounterNumber;
     public Sprite extraImage;
     public string extraNaam;
+    public string jaZin;
+    public string neeZin;
     
 
 
