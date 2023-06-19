@@ -18,8 +18,8 @@ MonoBehaviour:
   friend1: Puk
   friend2: Jakob
   nameCharacter: Geert-Peter
-  characterImage: {fileID: 21300000, guid: 08c91a7677e66844281a99aaf6ea36f1, type: 3}
+  characterImage: {fileID: 21300000, guid: 160d0c3b524376f43ac23620618fcd9c, type: 3}
   accept: 0
   encounterNumber: 3
-  extraImage: {fileID: 21300000, guid: 08c91a7677e66844281a99aaf6ea36f1, type: 3}
+  extraImage: {fileID: 21300000, guid: 160d0c3b524376f43ac23620618fcd9c, type: 3}
   extraNaam: Geert-Peter
