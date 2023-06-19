@@ -73,6 +73,4 @@ public class CharacterControlScript : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
-
-
 }

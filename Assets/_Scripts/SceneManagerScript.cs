@@ -9,6 +9,7 @@ public class SceneManagerScript : MonoBehaviour
     private bool isAdditiveSceneLoaded = false;
     public static int currentCount = 0;
     public CharacterControlScript player;
+    public GameObject startingChat;
 
     private void Start()
     {
@@ -50,5 +51,6 @@ public class SceneManagerScript : MonoBehaviour
     public void StartGame()
     {
         player.enabled = true;
+        startingChat.SetActive(false);
     }
 }
