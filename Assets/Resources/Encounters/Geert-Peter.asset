@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 14
   memberSinceDate: 3 maanden
-  predefinedMessages: Yo! Mijn naam is Geert-Peter. Wil je vrienden worden?
-  friend1: Puk
-  friend2: Jakob
+  predefinedMessages: Yo! Kom samen bellen met mijn vrienden! Join het gesprek :)
+  friend1: D4RK_H4CK3R
+  friend2: Finchenzo Fish
   nameCharacter: Geert-Peter
   characterImage: {fileID: 21300000, guid: 160d0c3b524376f43ac23620618fcd9c, type: 3}
   accept: 0
   encounterNumber: 3
   extraImage: {fileID: 21300000, guid: 160d0c3b524376f43ac23620618fcd9c, type: 3}
   extraNaam: Geert-Peter
+  jaZin: Klinkt leuk! Ik kom er gelijk aan.
+  neeZin: Ik vertrouw de mensen niet waar jij mee omgaat. *Blokkeer*

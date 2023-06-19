@@ -66,6 +66,7 @@ public class CharacterControlScript : MonoBehaviour
         if (other.gameObject.CompareTag("Interactable_Computer"))
         {
             sceneManager.ToggleAdditiveScene();
+            other.enabled = false;
         }
 
         if (other.gameObject.CompareTag("Portal"))

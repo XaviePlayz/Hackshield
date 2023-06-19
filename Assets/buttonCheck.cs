@@ -51,7 +51,7 @@ public class buttonCheck : MonoBehaviour
 
     public void buttonClick()
     {
-        if (check.characterData.accept = false)
+        if (check.characterData.accept == false)
         {
             wrongAnswer.SetActive(true);
             phoneScreen.SetActive(false);
@@ -66,7 +66,7 @@ public class buttonCheck : MonoBehaviour
 
     public void noClick()
     {
-        if (check.characterData.accept = true)
+        if (check.characterData.accept == true)
         {
             wrongAnswer.SetActive(true);
             phoneScreen.SetActive(false);
