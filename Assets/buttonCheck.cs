@@ -77,4 +77,9 @@ public class buttonCheck : MonoBehaviour
             phoneScreen.SetActive(false);
         }
     }
+
+    public void playAgain()
+    {
+        SceneManager.LoadScene("Starting Chamber");
+    }
 }

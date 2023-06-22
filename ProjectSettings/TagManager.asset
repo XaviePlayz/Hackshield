@@ -8,6 +8,7 @@ TagManager:
   - Interactable_Computer
   - Portal
   - Button
+  - End
   layers:
   - Default
   - TransparentFX
